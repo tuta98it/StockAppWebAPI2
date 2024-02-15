@@ -29,5 +29,11 @@ namespace StockAppWebAPI1.Controllers
             })
             .ToArray();
         }
+
+        [HttpGet("hello")]
+        public IActionResult sayHello()
+        {
+            return Ok("Hello world!!");
+        }
     }
 }

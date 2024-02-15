@@ -30,3 +30,45 @@ D:\Dev-Backend\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\refint\StockAppW
 D:\Dev-Backend\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\StockAppWebAPI1.pdb
 D:\Dev-Backend\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\StockAppWebAPI1.genruntimeconfig.cache
 D:\Dev-Backend\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\ref\StockAppWebAPI1.dll
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\bin\Debug\net6.0\appsettings.json
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\bin\Debug\net6.0\StockAppWebAPI1.exe
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\bin\Debug\net6.0\StockAppWebAPI1.deps.json
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\bin\Debug\net6.0\StockAppWebAPI1.runtimeconfig.json
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\bin\Debug\net6.0\StockAppWebAPI1.dll
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\bin\Debug\net6.0\StockAppWebAPI1.pdb
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\StockAppWebAPI1.csproj.AssemblyReference.cache
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\StockAppWebAPI1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\StockAppWebAPI1.AssemblyInfoInputs.cache
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\StockAppWebAPI1.AssemblyInfo.cs
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\StockAppWebAPI1.csproj.CoreCompileInputs.cache
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\StockAppWebAPI1.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\StockAppWebAPI1.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\staticwebassets\msbuild.StockAppWebAPI1.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\staticwebassets\msbuild.build.StockAppWebAPI1.props
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.StockAppWebAPI1.props
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.StockAppWebAPI1.props
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\scopedcss\bundle\StockAppWebAPI1.styles.css
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\StockAppWebAPI1.csproj.CopyComplete
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\StockAppWebAPI1.dll
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\refint\StockAppWebAPI1.dll
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\StockAppWebAPI1.pdb
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\StockAppWebAPI1.genruntimeconfig.cache
+C:\Users\MSCTU\Desktop\Thiết kế Database ứng dụng thông tin chứng khoán - SQL Server 2022-20240215T014055Z-001\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\ref\StockAppWebAPI1.dll
+C:\Users\MSCTU\Desktop\API .Net Core\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\StockAppWebAPI1.csproj.AssemblyReference.cache
+C:\Users\MSCTU\Desktop\API .Net Core\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\StockAppWebAPI1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MSCTU\Desktop\API .Net Core\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\StockAppWebAPI1.AssemblyInfoInputs.cache
+C:\Users\MSCTU\Desktop\API .Net Core\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\StockAppWebAPI1.AssemblyInfo.cs
+C:\Users\MSCTU\Desktop\API .Net Core\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\StockAppWebAPI1.csproj.CoreCompileInputs.cache
+C:\Users\MSCTU\Desktop\API .Net Core\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\StockAppWebAPI1.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\MSCTU\Desktop\API .Net Core\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\StockAppWebAPI1.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\MSCTU\Desktop\API .Net Core\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\StockAppWebAPI1.dll
+C:\Users\MSCTU\Desktop\API .Net Core\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\refint\StockAppWebAPI1.dll
+C:\Users\MSCTU\Desktop\API .Net Core\StockAppWebAPI2\StockAppWebAPI1\obj\Debug\net6.0\StockAppWebAPI1.pdb
