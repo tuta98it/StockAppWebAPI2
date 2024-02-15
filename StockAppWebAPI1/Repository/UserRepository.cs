@@ -5,8 +5,8 @@ namespace StockAppWebAPI1.Repository
 
     public class UserRepository : IUserRepository
     {
-        private readonly DbStockAppContext _context;
-        public UserRepository(DbStockAppContext context)
+        private readonly StockAppContext _context;
+        public UserRepository(StockAppContext context)
         {
             _context = context;
         }
