@@ -38,7 +38,6 @@ namespace StockAppWebAPI1.Models
         public DateTime? DateOfBirth { get; set; }
 
         [Column("country")]
-
         public string? Country { get; set; }
 
     }
