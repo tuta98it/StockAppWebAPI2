@@ -1,5 +1,6 @@
 ﻿using StockAppWebAPI1.Models;
 using StockAppWebAPI1.Repository;
+using StockAppWebAPI1.ViewModels;
 
 namespace StockAppWebAPI1.Services
 {
@@ -10,9 +11,9 @@ namespace StockAppWebAPI1.Services
         {
             _userRepository = userRepository;
         }
-        public Task<User> Register(User user)
+        public Task<User?> Register(RegisterViewModel registerViewMode)
         {
-            return _userRepository.Create(user);
+            return _userRepository.Create(registerViewMode);
         }
     }
 }

@@ -1,4 +1,7 @@
-﻿using StockAppWebAPI1.Models;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using StockAppWebAPI1.Models;
+using StockAppWebAPI1.ViewModels;
 
 namespace StockAppWebAPI1.Repository
 {
@@ -11,9 +14,27 @@ namespace StockAppWebAPI1.Repository
             _context = context;
         }
 
-        public Task<User> Create(User user)
+        public async Task<User?> Create(RegisterViewModel registerViewModel)
         {
-            return null;
+            string sql = "EXECUTE dbo.RegisterUser @username, " +
+                "@password, " +
+                "@email, " +
+                "@phone, " +
+                "@full_name, " +
+                "@date_of_birth, " +
+                "@country";
+
+            IEnumerable<User?> result = await _context.Users.FromSqlRaw(sql,
+                new SqlParameter("@username", registerViewModel.Username ?? ""),
+                new SqlParameter("@password", registerViewModel.Password),
+                new SqlParameter("@email", registerViewModel.Email),
+                new SqlParameter("@phone", registerViewModel.Phone),
+                new SqlParameter("@fullname", registerViewModel.Fullname ?? ""),
+                new SqlParameter("@date_of_birth", registerViewModel.DateOfBirth),
+                new SqlParameter("@country", registerViewModel.Country ?? "")).ToListAsync();
+
+            User? user = result.FirstOrDefault();
+            return user;
         }
 
         public Task DeleteById(int id)
@@ -21,19 +42,19 @@ namespace StockAppWebAPI1.Repository
             throw new NotImplementedException();
         }
 
-        public Task<User> GetByEmail(string email)
+        public async Task<User?> GetByEmail(string email)
         {
-            throw new NotImplementedException();
+            return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
         }
 
-        public Task<User> GetById(int id)
+        public async Task<User?> GetById(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Users.FindAsync(id);
         }
 
-        public Task<User> GetByUsername(string username)
+        public async Task<User?> GetByUsername(string username)
         {
-            throw new NotImplementedException();
+            return await _context.Users.FirstOrDefaultAsync(u => u.UserName == username);
         }
 
         public Task<User> UpdateById(int id, User user)
