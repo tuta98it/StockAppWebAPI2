@@ -16,22 +16,22 @@ namespace StockAppWebAPI1.Repository
 
         public async Task<User?> Create(RegisterViewModel registerViewModel)
         {
+            //Đoạn này sẽ gọi 1 procedure trong SQL
             string sql = "EXECUTE dbo.RegisterUser @username, " +
-                "@password, " +
-                "@email, " +
-                "@phone, " +
-                "@full_name, " +
-                "@date_of_birth, " +
-                "@country";
-
-            IEnumerable<User?> result = await _context.Users.FromSqlRaw(sql,
-                new SqlParameter("@username", registerViewModel.Username ?? ""),
-                new SqlParameter("@password", registerViewModel.Password),
-                new SqlParameter("@email", registerViewModel.Email),
-                new SqlParameter("@phone", registerViewModel.Phone),
-                new SqlParameter("@fullname", registerViewModel.Fullname ?? ""),
-                new SqlParameter("@date_of_birth", registerViewModel.DateOfBirth),
-                new SqlParameter("@country", registerViewModel.Country ?? "")).ToListAsync();
+                            "@password, " +
+                            "@email, " +
+                            "@phone, " +
+                            "@full_name, " +
+                            "@date_of_birth, " +
+                            "@country";
+            IEnumerable<User> result = await _context.Users.FromSqlRaw(sql,
+                        new SqlParameter("@username", registerViewModel.Username ?? ""),
+                        new SqlParameter("@password", registerViewModel.Password),
+                        new SqlParameter("@email", registerViewModel.Email),
+                        new SqlParameter("@phone", registerViewModel.Phone ?? ""),
+                        new SqlParameter("@full_name", registerViewModel.FullName ?? ""),
+                        new SqlParameter("@date_of_birth", registerViewModel.DateOfBirth),
+                        new SqlParameter("@country", registerViewModel.Country)).ToListAsync();
 
             User? user = result.FirstOrDefault();
             return user;

@@ -32,7 +32,7 @@ namespace StockAppWebAPI1.Models
         public string Phone { get; set; } = string.Empty;
 
         [StringLength(255, ErrorMessage = "Full name cannot exceed 255 characters")]
-        [Column("fullname")]
+        [Column("full_name")]
         public String? FullName { get; set; }
         [Column("date_of_birth")]
         public DateTime? DateOfBirth { get; set; }
