@@ -14,7 +14,7 @@ namespace StockAppWebAPI1.ViewModels
         public string Password { get; set; } = string.Empty;
         [Required(ErrorMessage = "You must enter your phone")]
         public string Phone { get; set; } = string.Empty;
-        public string? Fullname { get; set; }
+        public string? FullName { get; set; }
         public DateTime? DateOfBirth { get; set; }
         public string? Country { get; set; }
     }
