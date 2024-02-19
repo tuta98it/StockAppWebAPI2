@@ -7,5 +7,6 @@ namespace StockAppWebAPI1.Services
     {
         Task<User?> Register(RegisterViewModel registerViewModel);
         Task<User?> GetByEmail(string email);
+        Task<User?> GetById(int id);
     }
 }

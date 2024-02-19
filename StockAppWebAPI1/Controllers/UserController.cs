@@ -30,6 +30,20 @@ namespace StockAppWebAPI1.Controllers
             }
         }
 
+        [HttpPost("GetByID")]
+        public async Task<IActionResult> GetByID(int id)
+        {
+            try
+            {
+                User? user = await _userService.GetById(id);
+                return Ok(user);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { Message = ex.Message });
+            }
+        }
+
         [HttpPost("GetByEmail")]
         public async Task<IActionResult> GetByEmail(string email)
         {
