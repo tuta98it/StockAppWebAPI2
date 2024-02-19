@@ -16,13 +16,27 @@ namespace StockAppWebAPI1.Controllers
             _userService = userService;
         }
 
-        [HttpPost("register")]
+        [HttpPost("Register")]
         public async Task<IActionResult> Register(RegisterViewModel registerViewModel)
         {
             try
             {
                 User? newUser = await _userService.Register(registerViewModel);
                 return Ok(newUser);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { Message = ex.Message });
+            }
+        }
+
+        [HttpPost("GetByEmail")]
+        public async Task<IActionResult> GetByEmail(string email)
+        {
+            try
+            {
+                User? user = await _userService.GetByEmail(email);
+                return Ok(user);
             }
             catch (ArgumentException ex)
             {

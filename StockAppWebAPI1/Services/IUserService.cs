@@ -5,6 +5,7 @@ namespace StockAppWebAPI1.Services
 {
     public interface IUserService
     {
-        Task<User> Register(RegisterViewModel registerViewModel);
+        Task<User?> Register(RegisterViewModel registerViewModel);
+        Task<User?> GetByEmail(string email);
     }
 }

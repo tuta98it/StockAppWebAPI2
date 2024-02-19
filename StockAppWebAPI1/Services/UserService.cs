@@ -15,5 +15,10 @@ namespace StockAppWebAPI1.Services
         {
             return _userRepository.Create(registerViewMode);
         }
+
+        public Task<User?> GetByEmail(string email)
+        {
+            return _userRepository.GetByEmail(email);
+        }
     }
 }
