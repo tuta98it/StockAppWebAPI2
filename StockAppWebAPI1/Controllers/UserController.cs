@@ -16,6 +16,13 @@ namespace StockAppWebAPI1.Controllers
             _userService = userService;
         }
 
+        [HttpPost("Login")]
+        public async Task<ActionResult> Login(LoginViewModel loginViewModel)
+        {
+            string jwtToken = await _userService.Login(loginViewModel);
+            return Ok(new { jwtToken });
+        }
+
         [HttpPost("Register")]
         public async Task<IActionResult> Register(RegisterViewModel registerViewModel)
         {
@@ -70,12 +77,9 @@ namespace StockAppWebAPI1.Controllers
             {
                 return BadRequest(new { Message = ex.Message });
             }
-
-
-
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("UpdateById/{id}")]
         public async Task<IActionResult> UpdateById(int id, User newUser)
         {
             try
@@ -89,7 +93,7 @@ namespace StockAppWebAPI1.Controllers
             }
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("DeleteById/{id}")]
         public async Task<IActionResult> DeleteById(int id)
         {
             try

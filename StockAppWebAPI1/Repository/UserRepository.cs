@@ -1,7 +1,11 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using StockAppWebAPI1.Models;
 using StockAppWebAPI1.ViewModels;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 namespace StockAppWebAPI1.Repository
 {
@@ -9,11 +13,45 @@ namespace StockAppWebAPI1.Repository
     public class UserRepository : IUserRepository
     {
         private readonly StockAppContext _context;
-        public UserRepository(StockAppContext context)
+        private readonly IConfiguration _config;
+        public UserRepository(StockAppContext context, IConfiguration config)
         {
             _context = context;
+            _config = config;
         }
+        public async Task<string> Login(LoginViewModel loginViewModel)
+        {
+            string sql = "EXECUTE dbo.CheckLogin @email, @password";
+            IEnumerable<User> result = await _context.Users.FromSqlRaw(sql,
+                new SqlParameter("@email", loginViewModel.Email),
+                new SqlParameter("@password", loginViewModel.Password))
+                .ToListAsync();
+            User? user = result.FirstOrDefault();
+            if (user == null)
+            {
+                throw new ArgumentException("Wrong email or password");
+            }
+            else
+            {
+                //tạo ra jwt string để gửi cho client
+                // Nếu xác thực thành công, tạo JWT token
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var key = Encoding.ASCII.GetBytes(_config["Jwt:SecretKey"] ?? "");
+                var tokenDescriptor = new SecurityTokenDescriptor
+                {
+                    Subject = new ClaimsIdentity(new Claim[]
+                    {
+                        new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
+                    }),
+                    Expires = DateTime.UtcNow.AddDays(30),
+                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                };
 
+                var token = tokenHandler.CreateToken(tokenDescriptor);
+                var jwtToken = tokenHandler.WriteToken(token);
+                return jwtToken;
+            }
+        }
         public async Task<User?> Create(RegisterViewModel registerViewModel)
         {
             //Đoạn này sẽ gọi 1 procedure trong SQL

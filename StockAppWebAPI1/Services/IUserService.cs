@@ -11,5 +11,6 @@ namespace StockAppWebAPI1.Services
         Task<User?> GetById(int id);
         Task<User?> UpdateById(int id, User user);
         Task<User?> DeleteById(int id);
+        Task<string> Login(LoginViewModel loginViewModel);
     }
 }
