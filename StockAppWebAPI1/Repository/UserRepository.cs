@@ -37,10 +37,6 @@ namespace StockAppWebAPI1.Repository
             return user;
         }
 
-        public Task DeleteById(int id)
-        {
-            throw new NotImplementedException();
-        }
 
         public async Task<User?> GetByEmail(string email)
         {
@@ -57,9 +53,36 @@ namespace StockAppWebAPI1.Repository
             return await _context.Users.FirstOrDefaultAsync(u => u.UserName == username);
         }
 
-        public Task<User> UpdateById(int id, User user)
+        public async Task<User?> UpdateById(int id, User user)
         {
-            throw new NotImplementedException();
+            var existingUser = await _context.Users.FindAsync(id);
+            if (existingUser == null)
+            {
+                throw new KeyNotFoundException($"User with ID {id} not found");
+            }
+            var properties = typeof(User).GetProperties();
+            foreach (var property in properties)
+            {
+                var newValue = property.GetValue(user);
+                if (newValue != null)
+                {
+                    property.SetValue(existingUser, newValue);
+                }
+            }
+            await _context.SaveChangesAsync();
+            return existingUser;
+        }
+
+        public async Task<User?> DeleteById(int id)
+        {
+            var existingUser = await _context.Users.FindAsync(id);
+            if (existingUser == null)
+            {
+                throw new KeyNotFoundException($"User with ID {id} not found");
+            }
+            _context.Remove(existingUser);
+            await _context.SaveChangesAsync();
+            return existingUser;
         }
     }
 }

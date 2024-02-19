@@ -11,9 +11,25 @@ namespace StockAppWebAPI1.Services
         {
             _userRepository = userRepository;
         }
-        public Task<User?> Register(RegisterViewModel registerViewMode)
+        public async Task<User?> Register(RegisterViewModel registerViewModel)
         {
-            return _userRepository.Create(registerViewMode);
+            // Kiểm tra xem username hoặc email đã tồn tại trong database chưa
+            //Tạo ra đối tượng User từ RegisterViewModel            
+            var existingUserByUsername = await _userRepository
+                        .GetByUsername(registerViewModel.Username ?? "");
+            if (existingUserByUsername != null)
+            {
+                throw new ArgumentException("Username already exists");
+            }
+
+            var existingUserByEmail = await _userRepository
+                .GetByEmail(registerViewModel.Email);
+            if (existingUserByEmail != null)
+            {
+                throw new ArgumentException("Email already exists");
+            }
+
+            return await _userRepository.Create(registerViewModel);
         }
 
         public Task<User?> GetById(int id)
@@ -25,7 +41,18 @@ namespace StockAppWebAPI1.Services
         {
             return _userRepository.GetByEmail(email);
         }
-
+        public Task<User?> GetByUsername(string name)
+        {
+            return _userRepository.GetByUsername(name);
+        }
+        public Task<User?> UpdateById(int id, User user)
+        {
+            return _userRepository.UpdateById(id, user);
+        }
+        public Task<User?> DeleteById(int id)
+        {
+            return _userRepository.DeleteById(id);
+        }
 
     }
 }

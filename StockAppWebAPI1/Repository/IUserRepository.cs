@@ -5,11 +5,11 @@ namespace StockAppWebAPI1.Repository
 {
     public interface IUserRepository
     {
-        Task<User?> Create(RegisterViewModel registerViewMode);
+        Task<User?> Create(RegisterViewModel registerViewModel);
         Task<User?> GetById(int id);
         Task<User?> GetByUsername(string username);
         Task<User?> GetByEmail(string email);
-        Task<User> UpdateById(int id, User user);
-        Task DeleteById(int id);
+        Task<User?> UpdateById(int id, User user);
+        Task<User?> DeleteById(int id);
     }
 }

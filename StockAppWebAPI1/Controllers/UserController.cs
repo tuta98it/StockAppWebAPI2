@@ -44,6 +44,20 @@ namespace StockAppWebAPI1.Controllers
             }
         }
 
+        [HttpPost("GetByUsername")]
+        public async Task<IActionResult> GetByUsername(string username)
+        {
+            try
+            {
+                User? user = await _userService.GetByUsername(username);
+                return Ok(user);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { Message = ex.Message });
+            }
+        }
+
         [HttpPost("GetByEmail")]
         public async Task<IActionResult> GetByEmail(string email)
         {
@@ -51,6 +65,37 @@ namespace StockAppWebAPI1.Controllers
             {
                 User? user = await _userService.GetByEmail(email);
                 return Ok(user);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { Message = ex.Message });
+            }
+
+
+
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateById(int id, User newUser)
+        {
+            try
+            {
+                User? user = await _userService.UpdateById(id, newUser);
+                return Ok(user);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { Message = ex.Message });
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteById(int id)
+        {
+            try
+            {
+                User? removeUser = await _userService.DeleteById(id);
+                return Ok(removeUser);
             }
             catch (ArgumentException ex)
             {
