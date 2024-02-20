@@ -13,6 +13,9 @@ builder.Services.AddDbContext<StockAppContext>(options => options.UseSqlServer(s
 // Repositores, services
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
+
+builder.Services.AddScoped<IWatchListRepository, WatchListRepository>();
+builder.Services.AddScoped<IWatchListService, WatchListService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

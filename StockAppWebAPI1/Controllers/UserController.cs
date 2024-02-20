@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using StockAppWebAPI1.Attributes;
 using StockAppWebAPI1.Models;
 using StockAppWebAPI1.Services;
 using StockAppWebAPI1.ViewModels;
@@ -8,10 +9,10 @@ namespace StockAppWebAPI1.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class UserController : ControllerBase
+    public class WatchlistController : ControllerBase
     {
         private readonly IUserService _userService;
-        public UserController(IUserService userService)
+        public WatchlistController(IUserService userService)
         {
             _userService = userService;
         }
@@ -22,7 +23,7 @@ namespace StockAppWebAPI1.Controllers
             string jwtToken = await _userService.Login(loginViewModel);
             return Ok(new { jwtToken });
         }
-
+        [JwtAuthorize]
         [HttpPost("Register")]
         public async Task<IActionResult> Register(RegisterViewModel registerViewModel)
         {
@@ -36,7 +37,7 @@ namespace StockAppWebAPI1.Controllers
                 return BadRequest(new { Message = ex.Message });
             }
         }
-
+        [JwtAuthorize]
         [HttpPost("GetByID")]
         public async Task<IActionResult> GetByID(int id)
         {
@@ -50,7 +51,7 @@ namespace StockAppWebAPI1.Controllers
                 return BadRequest(new { Message = ex.Message });
             }
         }
-
+        [JwtAuthorize]
         [HttpPost("GetByUsername")]
         public async Task<IActionResult> GetByUsername(string username)
         {
@@ -64,7 +65,7 @@ namespace StockAppWebAPI1.Controllers
                 return BadRequest(new { Message = ex.Message });
             }
         }
-
+        [JwtAuthorize]
         [HttpPost("GetByEmail")]
         public async Task<IActionResult> GetByEmail(string email)
         {
@@ -79,6 +80,7 @@ namespace StockAppWebAPI1.Controllers
             }
         }
 
+        [JwtAuthorize]
         [HttpPut("UpdateById/{id}")]
         public async Task<IActionResult> UpdateById(int id, User newUser)
         {
@@ -93,6 +95,7 @@ namespace StockAppWebAPI1.Controllers
             }
         }
 
+        [JwtAuthorize]
         [HttpDelete("DeleteById/{id}")]
         public async Task<IActionResult> DeleteById(int id)
         {
