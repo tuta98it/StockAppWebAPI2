@@ -1,4 +1,5 @@
-﻿using StockAppWebApi.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using StockAppWebApi.Models;
 using StockAppWebAPI1.Models;
 
 namespace StockAppWebAPI1.Repository
@@ -14,19 +15,26 @@ namespace StockAppWebAPI1.Repository
             _config = config;
         }
 
-        public Task AddStockToWatchlist(int userId, int stockId)
+        public async Task AddStockToWatchlist(int userId, int stockId)
         {
-            throw new NotImplementedException();
+            var watchlist = await _context.WatchLists.FindAsync(userId, stockId);
+            if (watchlist == null)
+            {
+                watchlist = new WatchList { UserId = userId, StockId = stockId };
+            }
+
+            _context.WatchLists.Add(watchlist);
+            await _context.SaveChangesAsync();
         }
 
-        public Task<WatchList?> GetWatchlist(int userId, int stockId)
+        public async Task<WatchList?> GetWatchlist(int userId, int stockId)
         {
-            throw new NotImplementedException();
+            return await _context.WatchLists.FirstOrDefaultAsync(watchList => watchList.UserId == userId && watchList.StockId == stockId);
         }
 
-        public Task<List<Stock?>?> GetWatchListByUserId(int userId)
+        public async Task<List<Stock?>?> GetWatchListByUserId(int userId)
         {
-            throw new NotImplementedException();
+            return await _context.WatchLists.Where(wl => wl.UserId == userId).Include(wl => wl.Stock).Select(wl => wl.Stock).ToListAsync();
         }
     }
 }

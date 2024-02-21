@@ -9,10 +9,10 @@ namespace StockAppWebAPI1.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class WatchlistController : ControllerBase
+    public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
-        public WatchlistController(IUserService userService)
+        public UserController(IUserService userService)
         {
             _userService = userService;
         }
@@ -38,12 +38,12 @@ namespace StockAppWebAPI1.Controllers
             }
         }
         [JwtAuthorize]
-        [HttpPost("GetByID")]
+        [HttpPost("GetUserByID")]
         public async Task<IActionResult> GetByID(int id)
         {
             try
             {
-                User? user = await _userService.GetById(id);
+                User? user = await _userService.GetUserById(id);
                 return Ok(user);
             }
             catch (ArgumentException ex)
@@ -52,12 +52,12 @@ namespace StockAppWebAPI1.Controllers
             }
         }
         [JwtAuthorize]
-        [HttpPost("GetByUsername")]
-        public async Task<IActionResult> GetByUsername(string username)
+        [HttpPost("GetUserByUsername")]
+        public async Task<IActionResult> GetUserByUsername(string username)
         {
             try
             {
-                User? user = await _userService.GetByUsername(username);
+                User? user = await _userService.GetUserByUsername(username);
                 return Ok(user);
             }
             catch (ArgumentException ex)
@@ -66,27 +66,12 @@ namespace StockAppWebAPI1.Controllers
             }
         }
         [JwtAuthorize]
-        [HttpPost("GetByEmail")]
-        public async Task<IActionResult> GetByEmail(string email)
+        [HttpPost("GetUserByEmail")]
+        public async Task<IActionResult> GetUserByEmail(string email)
         {
             try
             {
-                User? user = await _userService.GetByEmail(email);
-                return Ok(user);
-            }
-            catch (ArgumentException ex)
-            {
-                return BadRequest(new { Message = ex.Message });
-            }
-        }
-
-        [JwtAuthorize]
-        [HttpPut("UpdateById/{id}")]
-        public async Task<IActionResult> UpdateById(int id, User newUser)
-        {
-            try
-            {
-                User? user = await _userService.UpdateById(id, newUser);
+                User? user = await _userService.GetUserByEmail(email);
                 return Ok(user);
             }
             catch (ArgumentException ex)
@@ -96,12 +81,27 @@ namespace StockAppWebAPI1.Controllers
         }
 
         [JwtAuthorize]
-        [HttpDelete("DeleteById/{id}")]
-        public async Task<IActionResult> DeleteById(int id)
+        [HttpPut("UpdateUserById/{id}")]
+        public async Task<IActionResult> UpdateUserById(int id, User newUser)
         {
             try
             {
-                User? removeUser = await _userService.DeleteById(id);
+                User? user = await _userService.UpdateUserById(id, newUser);
+                return Ok(user);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { Message = ex.Message });
+            }
+        }
+
+        [JwtAuthorize]
+        [HttpDelete("DeleteUserById/{id}")]
+        public async Task<IActionResult> DeleteUserById(int id)
+        {
+            try
+            {
+                User? removeUser = await _userService.DeleteUserById(id);
                 return Ok(removeUser);
             }
             catch (ArgumentException ex)

@@ -6,11 +6,11 @@ namespace StockAppWebAPI1.Services
     public interface IUserService
     {
         Task<User?> Register(RegisterViewModel registerViewModel);
-        Task<User?> GetByUsername(string username);
-        Task<User?> GetByEmail(string email);
-        Task<User?> GetById(int id);
-        Task<User?> UpdateById(int id, User user);
-        Task<User?> DeleteById(int id);
+        Task<User?> GetUserByUsername(string username);
+        Task<User?> GetUserByEmail(string email);
+        Task<User?> GetUserById(int id);
+        Task<User?> UpdateUserById(int id, User user);
+        Task<User?> DeleteUserById(int id);
         Task<string> Login(LoginViewModel loginViewModel);
     }
 }

@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using StockAppWebApi.Models;
+using StockAppWebApi.Extensions;
+using StockAppWebApi.Services;
 using StockAppWebAPI1.Attributes;
-using StockAppWebAPI1.Models;
+using StockAppWebAPI1.Services;
 using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 
 namespace StockAppWebAPI1.Controllers
@@ -10,28 +11,63 @@ namespace StockAppWebAPI1.Controllers
     [Route("api/[controller]")]
     public class WatchListController : ControllerBase
     {
-        private readonly WatchListController _watchListController;
-        public WatchListController(WatchListController watchListController)
+        private readonly IUserService _userService;
+        private readonly IWatchListService _watchListService;
+        private readonly IStockService _stockService;
+        public WatchListController(
+            IUserService userService,
+            IWatchListService watchListService,
+            IStockService stockService
+            )
         {
-            _watchListController = watchListController;
+            _userService = userService;
+            _watchListService = watchListService;
+            _stockService = stockService;
         }
 
+        [HttpGet]
         [JwtAuthorize]
-        public Task AddStockToWatchlist(int userId, int stockId)
+        public async Task<IActionResult> GetMyWatchList(int stockId)
         {
-            return _watchListController.AddStockToWatchlist(userId, stockId);
+            // Lấy UserId từ context
+            int userId = HttpContext.GetUserId();
+            // Kiểm tra người dùng và cổ phiếu tồn tại
+            var user = await _userService.GetUserById(userId);
+            if (user == null)
+            {
+                return NotFound("User not found");
+            }
+            var stocks = await _watchListService.GetWatchListByUserId(userId);
+            return Ok(stocks);
         }
 
+        [HttpPost("AddStockToWatchlist/{stockId}")]
         [JwtAuthorize]
-        public Task<WatchList?> GetWatchlist(int userId, int stockId)
+        public async Task<IActionResult> AddStockToWatchlist(int stockId)
         {
-            return _watchListController.GetWatchlist(userId, stockId);
-        }
+            // Lấy UserId từ context
+            int userId = HttpContext.GetUserId();
 
-        [JwtAuthorize]
-        public Task<List<Stock?>?> GetWatchListByUserId(int userId)
-        {
-            return _watchListController.GetWatchListByUserId(userId);
+            // Kiểm tra người dùng và cổ phiếu tồn tại
+            var user = await _userService.GetUserById(userId);
+            if (user == null)
+            {
+                return NotFound("User not found.");
+            }
+
+            var stock = await _stockService.GetStockById(stockId);
+            if (stock == null)
+            {
+                return NotFound("Stock not found.");
+            }
+
+            var existingWatchlistItem = await _watchListService.GetWatchlist(userId, stockId);
+            if (existingWatchlistItem != null)
+            {
+                return BadRequest("Stock is already in watchlist.");
+            }
+            await _watchListService.AddStockToWatchlist(userId, stockId);
+            return Ok();
         }
     }
 }
