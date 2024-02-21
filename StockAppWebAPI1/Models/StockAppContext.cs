@@ -18,6 +18,7 @@ namespace StockAppWebAPI1.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            //Tập hợp UserId và StockId làm khoá chính
             modelBuilder.Entity<WatchList>().HasKey(w => new { w.UserId, w.StockId });
         }
     }

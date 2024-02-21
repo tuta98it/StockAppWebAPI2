@@ -20,8 +20,15 @@ namespace StockAppWebAPI1.Controllers
         [HttpPost("Login")]
         public async Task<ActionResult> Login(LoginViewModel loginViewModel)
         {
-            string jwtToken = await _userService.Login(loginViewModel);
-            return Ok(new { jwtToken });
+            try
+            {
+                string jwtToken = await _userService.Login(loginViewModel);
+                return Ok(new { jwtToken });
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { Message = ex.Message });
+            }
         }
         [JwtAuthorize]
         [HttpPost("Register")]

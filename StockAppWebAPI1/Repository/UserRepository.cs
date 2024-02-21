@@ -23,15 +23,12 @@ namespace StockAppWebAPI1.Repository
         {
             string sql = "EXECUTE dbo.CheckLogin @email, @password";
             IEnumerable<User> result = await _context.Users.FromSqlRaw(sql,
-                new SqlParameter("@email", loginViewModel.Email),
-                new SqlParameter("@password", loginViewModel.Password))
+                        new SqlParameter("@email", loginViewModel.Email),
+                        new SqlParameter("@password", loginViewModel.Password))
                 .ToListAsync();
+
             User? user = result.FirstOrDefault();
-            if (user == null)
-            {
-                throw new ArgumentException("Wrong email or password");
-            }
-            else
+            if (user != null)
             {
                 //tạo ra jwt string để gửi cho client
                 // Nếu xác thực thành công, tạo JWT token
@@ -44,12 +41,16 @@ namespace StockAppWebAPI1.Repository
                         new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
                     }),
                     Expires = DateTime.UtcNow.AddDays(30),
-                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                    SigningCredentials = new SigningCredentials
+                        (new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
                 };
-
                 var token = tokenHandler.CreateToken(tokenDescriptor);
                 var jwtToken = tokenHandler.WriteToken(token);
                 return jwtToken;
+            }
+            else
+            {
+                throw new ArgumentException("Wrong email or password");
             }
         }
         public async Task<User?> Create(RegisterViewModel registerViewModel)

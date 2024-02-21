@@ -8,11 +8,9 @@ namespace StockAppWebAPI1.Repository
     public class WatchListRepository : IWatchListRepository
     {
         private readonly StockAppContext _context;
-        private readonly IConfiguration _config;
-        public WatchListRepository(StockAppContext context, IConfiguration config)
+        public WatchListRepository(StockAppContext context)
         {
             _context = context;
-            _config = config;
         }
 
         public async Task AddStockToWatchlist(int userId, int stockId)
