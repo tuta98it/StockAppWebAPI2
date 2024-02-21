@@ -45,7 +45,7 @@ namespace StockAppWebAPI1.Filters
                     return;
                 }
                 var userId = int.Parse(jwtToken.Claims.First().Value);
-                context.HttpContext.Items["userId"] = userId;
+                context.HttpContext.Items["UserId"] = userId;
             }
             catch
             {
