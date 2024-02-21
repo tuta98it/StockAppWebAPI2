@@ -39,7 +39,7 @@ namespace StockAppWebAPI1.Filters
                     ClockSkew = TimeSpan.Zero
                 }, out SecurityToken validatedToken);
                 var jwtToken = (JwtSecurityToken)validatedToken;
-                if (jwtToken.ValidTo > DateTime.UtcNow)
+                if (jwtToken.ValidTo < DateTime.UtcNow)
                 {
                     context.Result = new UnauthorizedResult();
                     return;
