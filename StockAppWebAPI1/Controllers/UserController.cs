@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using StockAppWebAPI1.Attributes;
 using StockAppWebAPI1.Models;
 using StockAppWebAPI1.Services;
 using StockAppWebAPI1.ViewModels;
@@ -19,10 +20,17 @@ namespace StockAppWebAPI1.Controllers
         [HttpPost("Login")]
         public async Task<ActionResult> Login(LoginViewModel loginViewModel)
         {
-            string jwtToken = await _userService.Login(loginViewModel);
-            return Ok(new { jwtToken });
+            try
+            {
+                string jwtToken = await _userService.Login(loginViewModel);
+                return Ok(new { jwtToken });
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { Message = ex.Message });
+            }
         }
-
+        [JwtAuthorize]
         [HttpPost("Register")]
         public async Task<IActionResult> Register(RegisterViewModel registerViewModel)
         {
@@ -36,13 +44,41 @@ namespace StockAppWebAPI1.Controllers
                 return BadRequest(new { Message = ex.Message });
             }
         }
-
-        [HttpPost("GetByID")]
+        [JwtAuthorize]
+        [HttpPost("GetUserByID")]
         public async Task<IActionResult> GetByID(int id)
         {
             try
             {
-                User? user = await _userService.GetById(id);
+                User? user = await _userService.GetUserById(id);
+                return Ok(user);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { Message = ex.Message });
+            }
+        }
+        [JwtAuthorize]
+        [HttpPost("GetUserByUsername")]
+        public async Task<IActionResult> GetUserByUsername(string username)
+        {
+            try
+            {
+                User? user = await _userService.GetUserByUsername(username);
+                return Ok(user);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { Message = ex.Message });
+            }
+        }
+        [JwtAuthorize]
+        [HttpPost("GetUserByEmail")]
+        public async Task<IActionResult> GetUserByEmail(string email)
+        {
+            try
+            {
+                User? user = await _userService.GetUserByEmail(email);
                 return Ok(user);
             }
             catch (ArgumentException ex)
@@ -51,12 +87,13 @@ namespace StockAppWebAPI1.Controllers
             }
         }
 
-        [HttpPost("GetByUsername")]
-        public async Task<IActionResult> GetByUsername(string username)
+        [JwtAuthorize]
+        [HttpPut("UpdateUserById/{id}")]
+        public async Task<IActionResult> UpdateUserById(int id, User newUser)
         {
             try
             {
-                User? user = await _userService.GetByUsername(username);
+                User? user = await _userService.UpdateUserById(id, newUser);
                 return Ok(user);
             }
             catch (ArgumentException ex)
@@ -65,40 +102,13 @@ namespace StockAppWebAPI1.Controllers
             }
         }
 
-        [HttpPost("GetByEmail")]
-        public async Task<IActionResult> GetByEmail(string email)
+        [JwtAuthorize]
+        [HttpDelete("DeleteUserById/{id}")]
+        public async Task<IActionResult> DeleteUserById(int id)
         {
             try
             {
-                User? user = await _userService.GetByEmail(email);
-                return Ok(user);
-            }
-            catch (ArgumentException ex)
-            {
-                return BadRequest(new { Message = ex.Message });
-            }
-        }
-
-        [HttpPut("UpdateById/{id}")]
-        public async Task<IActionResult> UpdateById(int id, User newUser)
-        {
-            try
-            {
-                User? user = await _userService.UpdateById(id, newUser);
-                return Ok(user);
-            }
-            catch (ArgumentException ex)
-            {
-                return BadRequest(new { Message = ex.Message });
-            }
-        }
-
-        [HttpDelete("DeleteById/{id}")]
-        public async Task<IActionResult> DeleteById(int id)
-        {
-            try
-            {
-                User? removeUser = await _userService.DeleteById(id);
+                User? removeUser = await _userService.DeleteUserById(id);
                 return Ok(removeUser);
             }
             catch (ArgumentException ex)

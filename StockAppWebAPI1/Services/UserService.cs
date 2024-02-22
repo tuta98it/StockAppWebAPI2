@@ -36,24 +36,24 @@ namespace StockAppWebAPI1.Services
             return await _userRepository.Create(registerViewModel);
         }
 
-        public Task<User?> GetById(int id)
+        public Task<User?> GetUserById(int id)
         {
             return _userRepository.GetById(id);
         }
 
-        public Task<User?> GetByEmail(string email)
+        public Task<User?> GetUserByEmail(string email)
         {
             return _userRepository.GetByEmail(email);
         }
-        public Task<User?> GetByUsername(string name)
+        public Task<User?> GetUserByUsername(string name)
         {
             return _userRepository.GetByUsername(name);
         }
-        public Task<User?> UpdateById(int id, User user)
+        public Task<User?> UpdateUserById(int id, User user)
         {
             return _userRepository.UpdateById(id, user);
         }
-        public Task<User?> DeleteById(int id)
+        public Task<User?> DeleteUserById(int id)
         {
             return _userRepository.DeleteById(id);
         }
