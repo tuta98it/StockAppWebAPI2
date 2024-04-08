@@ -1,6 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using StockAppWebApi.Models;
 using StockAppWebAPI1.Models;
 using StockAppWebAPI1.ViewModels;
 using System.IdentityModel.Tokens.Jwt;

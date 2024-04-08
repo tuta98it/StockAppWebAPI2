@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using StockAppWebApi.Models;
 using StockAppWebApi.Repositories;
 using StockAppWebApi.Services;
 using StockAppWebAPI1.Filters;
-using StockAppWebAPI1.Models;
 using StockAppWebAPI1.Repository;
 using StockAppWebAPI1.Services;
 var builder = WebApplication.CreateBuilder(args);
