@@ -28,7 +28,7 @@ builder.Services.AddScoped<JwtAuthorizeFilter>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-// ??ng ký d?ch v? phân quy?n
+
 builder.Services.AddAuthorization();
 
 builder.Services.AddAuthentication(options =>
@@ -50,6 +50,13 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 
 app.UseAuthorization();
+
+var webSocketOptions = new WebSocketOptions
+{
+    KeepAliveInterval = TimeSpan.FromSeconds(2),
+};
+webSocketOptions.AllowedOrigins.Add("*");
+app.UseWebSockets(webSocketOptions);
 
 app.MapControllers();
 
