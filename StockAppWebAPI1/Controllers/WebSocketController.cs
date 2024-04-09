@@ -2,7 +2,7 @@
 using System.Net.WebSockets;
 using System.Text;
 
-namespace StockAppWebAPI11.Controllers
+namespace StockAppWebAPI1.Controllers
 {
     [Route("api/ws")]
     public class WebSocketController : ControllerBase

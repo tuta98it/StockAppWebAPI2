@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using StockAppWebAPI11.Models;
+using StockAppWebAPI1.Models;
 
 namespace StockAppWebAPI1.Repositories
 {

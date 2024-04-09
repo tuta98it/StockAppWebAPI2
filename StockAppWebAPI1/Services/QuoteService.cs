@@ -1,7 +1,7 @@
 ﻿using StockAppWebAPI1.Repositories;
-using StockAppWebAPI11.Models;
+using StockAppWebAPI1.Models;
 
-namespace StockAppWebAPI11.Services
+namespace StockAppWebAPI1.Services
 {
     public class QuoteService : IQuoteService
     {

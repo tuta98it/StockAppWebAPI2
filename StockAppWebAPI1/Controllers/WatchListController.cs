@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StockAppWebAPI1.Extensions;
-using StockAppWebAPI11.Attributes;
-using StockAppWebAPI11.Services;
+using StockAppWebAPI1.Attributes;
+using StockAppWebAPI1.Services;
 using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 
-namespace StockAppWebAPI11.Controllers
+namespace StockAppWebAPI1.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

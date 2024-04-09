@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace StockAppWebAPI11.Models
+namespace StockAppWebAPI1.Models
 {
     [Table("stocks")]
     public class Stock

@@ -1,8 +1,8 @@
-﻿using StockAppWebAPI11.Models;
-using StockAppWebAPI11.Repository;
-using StockAppWebAPI11.ViewModels;
+﻿using StockAppWebAPI1.Models;
+using StockAppWebAPI1.Repository;
+using StockAppWebAPI1.ViewModels;
 
-namespace StockAppWebAPI11.Services
+namespace StockAppWebAPI1.Services
 {
     public class UserService : IUserService
     {

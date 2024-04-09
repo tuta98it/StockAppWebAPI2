@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace StockAppWebAPI11.ViewModels
+namespace StockAppWebAPI1.ViewModels
 {
     public class RegisterViewModel
     {

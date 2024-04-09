@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace StockAppWebAPI11.Models
+namespace StockAppWebAPI1.Models
 {
     [Table("view_quotes_realtime")]
     [Keyless]

@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using StockAppWebAPI11.Attributes;
-using StockAppWebAPI11.Models;
-using StockAppWebAPI11.Services;
-using StockAppWebAPI11.ViewModels;
+using StockAppWebAPI1.Attributes;
+using StockAppWebAPI1.Models;
+using StockAppWebAPI1.Services;
+using StockAppWebAPI1.ViewModels;
 using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 
-namespace StockAppWebAPI11.Controllers
+namespace StockAppWebAPI1.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
@@ -30,7 +30,7 @@ namespace StockAppWebAPI11.Controllers
                 return BadRequest(new { Message = ex.Message });
             }
         }
-        [JwtAuthorize]
+
         [HttpPost("Register")]
         public async Task<IActionResult> Register(RegisterViewModel registerViewModel)
         {

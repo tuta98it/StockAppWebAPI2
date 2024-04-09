@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using StockAppWebAPI11.Models;
+using StockAppWebAPI1.Models;
 
-namespace StockAppWebAPI11.Repository
+namespace StockAppWebAPI1.Repository
 {
 
     public class WatchListRepository : IWatchListRepository

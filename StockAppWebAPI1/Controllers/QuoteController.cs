@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using StockAppWebAPI11.Models;
-using StockAppWebAPI11.Services;
+using StockAppWebAPI1.Models;
+using StockAppWebAPI1.Services;
 using System.Net.WebSockets;
 using System.Text;
 using System.Text.Json;

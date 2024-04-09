@@ -2,7 +2,7 @@
 
 using Microsoft.EntityFrameworkCore;
 
-namespace StockAppWebAPI11.Models
+namespace StockAppWebAPI1.Models
 {
     public class StockAppContext : DbContext
     {
