@@ -1,13 +1,12 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace StockAppWebApi.Models
+namespace StockAppWebAPI11.Models
 {
     [Table("view_quotes_realtime")]
     [Keyless]
     public class RealtimeQuote
-	{
+    {
         [Column("quote_id")]
         public int quoteId { get; set; }
 

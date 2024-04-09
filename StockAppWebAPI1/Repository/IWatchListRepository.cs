@@ -1,7 +1,6 @@
-﻿using StockAppWebApi.Models;
-using StockAppWebAPI1.Models;
+﻿using StockAppWebAPI11.Models;
 
-namespace StockAppWebAPI1.Repository
+namespace StockAppWebAPI11.Repository
 {
     public interface IWatchListRepository
     {

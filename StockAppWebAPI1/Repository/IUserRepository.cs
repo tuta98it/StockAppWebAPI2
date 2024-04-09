@@ -1,7 +1,7 @@
-﻿using StockAppWebAPI1.Models;
-using StockAppWebAPI1.ViewModels;
+﻿using StockAppWebAPI11.Models;
+using StockAppWebAPI11.ViewModels;
 
-namespace StockAppWebAPI1.Repository
+namespace StockAppWebAPI11.Repository
 {
     public interface IUserRepository
     {

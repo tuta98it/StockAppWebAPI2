@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using StockAppWebApi.Models;
-using StockAppWebApi.Services;
+using StockAppWebAPI11.Models;
+using StockAppWebAPI11.Services;
 using System.Net.WebSockets;
 using System.Text;
 using System.Text.Json;
 
-namespace StockAppWebApi.Controllers
+namespace StockAppWebAPI1.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

@@ -1,10 +1,9 @@
-﻿using System;
-using StockAppWebApi.Models;
+﻿using StockAppWebAPI11.Models;
 
-namespace StockAppWebApi.Repositories
+namespace StockAppWebAPI1.Repositories
 {
-	public interface IQuoteRepository
-	{
+    public interface IQuoteRepository
+    {
         Task<List<RealtimeQuote>?> GetRealtimeQuotes(
             int page,
             int limit,

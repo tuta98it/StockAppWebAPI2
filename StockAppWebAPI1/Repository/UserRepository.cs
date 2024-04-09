@@ -1,14 +1,13 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using StockAppWebApi.Models;
-using StockAppWebAPI1.Models;
-using StockAppWebAPI1.ViewModels;
+using StockAppWebAPI11.Models;
+using StockAppWebAPI11.ViewModels;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace StockAppWebAPI1.Repository
+namespace StockAppWebAPI11.Repository
 {
 
     public class UserRepository : IUserRepository

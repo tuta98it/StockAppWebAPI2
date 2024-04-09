@@ -1,11 +1,10 @@
-﻿using System;
-using StockAppWebApi.Models;
+﻿using StockAppWebAPI11.Models;
 
-namespace StockAppWebApi.Services
+namespace StockAppWebAPI11.Services
 {
-	public interface IStockService
-	{
-		Task<Stock?> GetStockById(int stockId);
+    public interface IStockService
+    {
+        Task<Stock?> GetStockById(int stockId);
         Task<List<string>> GetDistinctIndustries();
         Task<List<string>> GetDistinctSectors();
     }

@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using StockAppWebApi.Models;
-using StockAppWebAPI1.Models;
+using StockAppWebAPI11.Models;
 
-namespace StockAppWebApi.Repositories
+namespace StockAppWebAPI1.Repositories
 {
     public class StockRepository : IStockRepository
     {

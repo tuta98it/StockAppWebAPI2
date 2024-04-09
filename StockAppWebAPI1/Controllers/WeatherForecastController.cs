@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace StockAppWebAPI1.Controllers
+namespace StockAppWebAPI11.Controllers
 {
     [ApiController]
     [Route("[controller]")]

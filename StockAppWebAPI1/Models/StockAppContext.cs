@@ -1,7 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using StockAppWebAPI1.Models;
+﻿
 
-namespace StockAppWebApi.Models
+using Microsoft.EntityFrameworkCore;
+
+namespace StockAppWebAPI11.Models
 {
     public class StockAppContext : DbContext
     {

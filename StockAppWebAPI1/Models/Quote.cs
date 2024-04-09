@@ -1,12 +1,12 @@
-﻿using System;
+﻿
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace StockAppWebApi.Models
+namespace StockAppWebAPI11.Models
 {
-	[Table("quotes")]
-	public class Quote
-	{
+    [Table("quotes")]
+    public class Quote
+    {
         [Key]
         [Column("quote_id")]
         public int QuoteId { get; set; }

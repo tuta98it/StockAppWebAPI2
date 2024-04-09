@@ -1,8 +1,7 @@
-﻿using StockAppWebAPI1.Models;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace StockAppWebApi.Models
+namespace StockAppWebAPI11.Models
 {
     [Table("stocks")]
     public class Stock

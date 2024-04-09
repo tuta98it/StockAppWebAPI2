@@ -1,11 +1,10 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using StockAppWebApi.Models;
-using StockAppWebApi.Repositories;
-using StockAppWebApi.Services;
-using StockAppWebAPI1.Filters;
-using StockAppWebAPI1.Repository;
-using StockAppWebAPI1.Services;
+using StockAppWebAPI1.Repositories;
+using StockAppWebAPI11.Filters;
+using StockAppWebAPI11.Models;
+using StockAppWebAPI11.Repository;
+using StockAppWebAPI11.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

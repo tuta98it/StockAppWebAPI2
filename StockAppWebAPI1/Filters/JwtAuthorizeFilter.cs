@@ -4,7 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 
-namespace StockAppWebAPI1.Filters
+namespace StockAppWebAPI11.Filters
 {
     public class JwtAuthorizeFilter : IAuthorizationFilter
     {

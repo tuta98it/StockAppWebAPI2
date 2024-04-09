@@ -1,4 +1,4 @@
-﻿namespace StockAppWebApi.Extensions
+﻿namespace StockAppWebAPI1.Extensions
 {
     public static class HttpContextExtensions
     {

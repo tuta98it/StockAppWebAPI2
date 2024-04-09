@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using StockAppWebAPI1.Filters;
+using StockAppWebAPI11.Filters;
 
-namespace StockAppWebAPI1.Attributes
+namespace StockAppWebAPI11.Attributes
 {
     public class JwtAuthorizeAttribute : TypeFilterAttribute
     {

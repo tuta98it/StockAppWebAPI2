@@ -1,13 +1,13 @@
-﻿using System;
-using StockAppWebApi.Models;
-using StockAppWebApi.Repositories;
+﻿using StockAppWebAPI1.Repositories;
+using StockAppWebAPI11.Models;
 
-namespace StockAppWebApi.Services
+namespace StockAppWebAPI11.Services
 {
     public class StockService : IStockService
     {
         private readonly IStockRepository _stockRepository;
-        public StockService(IStockRepository stockRepository) {
+        public StockService(IStockRepository stockRepository)
+        {
             _stockRepository = stockRepository;
         }
         public async Task<Stock?> GetStockById(int stockId)

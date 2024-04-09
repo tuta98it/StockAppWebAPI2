@@ -1,11 +1,10 @@
-﻿using System;
-using StockAppWebApi.Models;
-using StockAppWebApi.Repositories;
+﻿using StockAppWebAPI1.Repositories;
+using StockAppWebAPI11.Models;
 
-namespace StockAppWebApi.Services
+namespace StockAppWebAPI11.Services
 {
-	public class QuoteService: IQuoteService
-	{
+    public class QuoteService : IQuoteService
+    {
         private readonly IQuoteRepository _quoteRepository;
         public QuoteService(IQuoteRepository quoteRepository)
         {

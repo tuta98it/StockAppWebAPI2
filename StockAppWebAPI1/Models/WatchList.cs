@@ -1,8 +1,7 @@
-﻿using StockAppWebApi.Models;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace StockAppWebAPI1.Models
+namespace StockAppWebAPI11.Models
 {
     [Table("watchlists")]
     public class WatchList
